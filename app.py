@@ -3,9 +3,10 @@ from pydantic import BaseModel
 import joblib
 import pandas as pd
 app=FastAPI()
-model=joblib.load("models/student_model.pkl")
+model = joblib.load("Models/student_model.pkl")
 @app.get("/")
 def home():
+    
     return{"message":"welcome to the student performance prediction api running"}
 class StudentData(BaseModel):
     study_hours:float
